@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/layout :: head('Warehouse Management')">
+        <title>Title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div th:replace="fragments/layout :: header">Header</div>
+        
+        <div th:replace="fragments/layout :: navbar">Navbar</div>
+        
+        <div th:replace="fragments/layout :: content-header('Product Categories')">Content Header</div>
+        
+        <div class="container">
+            Please select a product category to view:
+        </div>
+    </body>
+</html>
