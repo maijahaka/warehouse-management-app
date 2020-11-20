@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="fragments/layout :: head(${title})">
+    <head th:replace="fragments/layout :: head('Page not found')">
         <title>Title</title>
         <meta charset="UTF-8">
     </head>
@@ -8,11 +8,11 @@
         <div th:replace="fragments/layout :: header">Header</div>
         
         <div th:replace="fragments/layout :: navbar">Navbar</div>
-        
-        <div th:replace="fragments/layout :: content-header('Product Categories')">Content Header</div>
-        
-        <div class="container">
-            <p>Please select a product category to view:</p>
+                
+        <div class="container pb-2 mt-2">
+            <div class="alert alert-danger" role="alert">
+                Page not found! <a th:href="@{/}" class="alert-link">Return to home page.</a>
+            </div>
         </div>
     </body>
 </html>
