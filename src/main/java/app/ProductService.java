@@ -12,7 +12,7 @@ public class ProductService {
     
     private final Map<String, String> productCategories = new HashMap<String, String>()
     {{
-        put("jackets", "Jakcets");
+        put("jackets", "Jackets");
         put("shirts", "Shirts");
         put("accessories", "Accessories");
     }};

@@ -44,7 +44,7 @@ public class DefaultControllerTest extends org.fluentlenium.adapter.junit.Fluent
     }
     
     @Test
-    public void getRequestToNonSpecifiedPathReturnsIndex() throws Exception {
+    public void getRequestToNonSpecifiedPathReturnsPageNotFound() throws Exception {
         mockMvc.perform(get("/not-specified"))
                 .andExpect(status().isOk());
         
@@ -52,7 +52,7 @@ public class DefaultControllerTest extends org.fluentlenium.adapter.junit.Fluent
                 .andReturn();
         
         String content = res.getResponse().getContentAsString();
-        assertTrue(content.contains("Please select a product category to view"));    
+        assertTrue(content.contains("Page not found"));    
     }
     
     @Test
@@ -60,7 +60,7 @@ public class DefaultControllerTest extends org.fluentlenium.adapter.junit.Fluent
         goTo("http://localhost:" + port);
         assertTrue(pageSource().contains("Please select a product category to view"));
         
-        find(By.partialLinkText("Home")).click();
+        find(By.linkText("Home")).click();
         assertTrue(pageSource().contains("Please select a product category to view"));
     }
     

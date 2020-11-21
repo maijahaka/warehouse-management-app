@@ -25,8 +25,17 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}">
-                            <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" th:href="@{/}">Home</a>
                         </li>
+                        <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/jackets' ? 'active':''}">
+                            <a class="nav-link" th:href="@{/jackets}" id="nav-jackets">Jackets</a>
+                        </li>
+                        <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/shirts' ? 'active':''}">
+                            <a class="nav-link" th:href="@{/shirts}" id="nav-shirts">Shirts</a>
+                        </li>
+                        <li class="nav-item" th:classappend="${#httpServletRequest.getRequestURI() == '/accessories' ? 'active':''}">
+                            <a class="nav-link" th:href="@{/accessories}" id="nav-accessories">Accessories</a>
+                        </li>                        
                     </ul>
                 </div>
             </nav>
