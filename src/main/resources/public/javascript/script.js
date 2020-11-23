@@ -51,6 +51,7 @@ function showAllProducts(url) {
         tr.appendChild(tdManufacturer)
         tbody.appendChild(tr)
       })
+      document.getElementById("loader").style.display="none"
     })
     .catch(error => {
       console.log("Error:", error)
