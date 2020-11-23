@@ -4,7 +4,7 @@
         <title>Title</title>
         <meta charset="UTF-8">
     </head>
-    <body>
+    <body onload="showAllProducts(url)"> 
         <div th:replace="fragments/layout :: header">Header</div>
         
         <div th:replace="fragments/layout :: navbar">Navbar</div>
@@ -16,16 +16,21 @@
                 <thead>
                     <tr>
                       <th scope="col">Product ID</th>
-                      <th scope="col">test column</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Color</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Manufacturer</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">test id</th>
-                        <td>test</td>
-                    </tr>
-                </tbody>
+                <tbody id="products"></tbody>
             </table>
+            
+            <span id="errorMessage"></span>
         </div>
+        
+        <script th:inline="javascript">
+            var url = [[${url}]]
+        </script>
+        <script th:src="@{/javascript/script.js}"></script>
     </body>
 </html>

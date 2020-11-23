@@ -19,6 +19,7 @@ public class ProductController {
             return "notfound";
         }
         model.addAttribute("title", productService.getProductCategories().get(category));
+        model.addAttribute("url", "https://bad-api-assignment.reaktor.com/products/" + category);
         return "products";
     }
     
