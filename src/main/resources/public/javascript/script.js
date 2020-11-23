@@ -14,6 +14,7 @@ function showAllProducts(url) {
       return data
     })
     .then(data => {
+      document.getElementById("loader").style.display="none"
       let products = data
       products.map(function(product) {
         let tr = document.createElement("tr"), 
@@ -51,9 +52,9 @@ function showAllProducts(url) {
         tr.appendChild(tdManufacturer)
         tbody.appendChild(tr)
       })
-      document.getElementById("loader").style.display="none"
     })
     .catch(error => {
+      document.getElementById("loader").style.display="none"
       console.log("Error:", error)
       let errorMessage = document.getElementById("errorMessage")
       errorMessage.innerHTML = "<div class='alert alert-danger' role='alert'>"
